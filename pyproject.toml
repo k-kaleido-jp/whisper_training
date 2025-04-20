@@ -1,0 +1,14 @@
+[project]
+name = "whisper-training"
+version = "0.1.0"
+description = "whisper-training for OpenVino"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyannote-audio ==3.3.2",
+    "torch ==2.6.0",
+    "torchaudio ==2.6.0",
+    "transformers ==4.36.2",
+    "openvino ==2024.1.0",
+    "optimum-intel ==1.22.0",
+]
