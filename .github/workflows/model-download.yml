@@ -21,5 +21,12 @@ jobs:
       run: curl -o sample.wav https://www.hke.jp/products/voice/wav/audition/01.femal.wav
     - name: Download models
       run: uv run dlmodel.py
-    - name: Run
-      run: uv run main.py
+    - name: Archive models
+      uses: actions/upload-artifact@v4
+      with:
+        name: assets
+        path: assets
+
+    # We cannot run the model in the CI becuase of OpenVINO and GPU
+    # - name: Run
+    #  run: uv run main.py
