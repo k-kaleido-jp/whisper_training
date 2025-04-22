@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+    - name: Install dependencies
+      run: uv sync
+    - name: Download wav file
+      run: curl -o sample.wav https://www.hke.jp/products/voice/wav/audition/01.femal.wav
+    - name: Download models
+      run: uv run dlmodel.py
+    - name: Run
+      run: uv run main.py
