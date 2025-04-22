@@ -11,4 +11,5 @@ dependencies = [
     "transformers ==4.36.2",
     "openvino ==2024.1.0",
     "optimum-intel ==1.22.0",
+    "faster-whisper ==1.1.1",
 ]

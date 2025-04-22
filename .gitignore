@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Pre-trained Models
+assets/
+
+# Sample Voice
+sample.wav
